@@ -11,7 +11,22 @@ from config import *
 from get_top_100 import update_top100
 
 def Recommendation():
-
+    
+    print('\n')
+    print('\n')
+    print('#-----------------------------------------------------------------#')
+    print('#-----------------------------------------------------------------#')
+    print('\n')
+    print('                 Welcome to:                                       ')
+    print('\n')
+    print('                        *** MUSIC 4 YOU ***                        ')
+    print('\n')
+    print('                                             by: Ignacio Rus Prados')
+    print('\n')
+    print('#-----------------------------------------------------------------#')
+    print('#-----------------------------------------------------------------#')
+    print('\n')
+    print('\n')
     #--------------------------------Initializing Variables--------------------------------#
     
     top100_len = 99
@@ -21,7 +36,8 @@ def Recommendation():
     
     
     looking_for_the_right_song = True
-    filename = '../data/scaler.pickle'
+    filename_kmeans = '../data/kmeans.pickle'
+    filename_scaler = '../data/scaler.pickle'
     
 
     #--------------------------------Asking for input--------------------------------#
@@ -101,14 +117,17 @@ def Recommendation():
                 print('\nGo listen to AURORA ;)')
                 return
         
-        with open(filename, "rb") as f: 
+        with open(filename_kmeans, "rb") as f: 
             kmeans =  pickle.load(f)
+        with open(filename_scaler, "rb") as g: 
+            scaler =  pickle.load(g)
         
         audio_features = sp.audio_features(the_song_uri)
         table_features = pd.DataFrame(audio_features).drop(columns=['key','mode','type','id','uri','track_href',
-                                                                    'analysis_url','duration_ms','time_signature'])
+                                                                    'analysis_url','duration_ms','time_signature',
+                                                                    'tempo','loudness'])
         
-        features_scaled = StandardScaler().fit_transform(table_features)
+        features_scaled = scaler.transform(table_features)
         
         cluster = kmeans.predict(features_scaled)[0]
         

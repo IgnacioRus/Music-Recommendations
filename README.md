@@ -20,7 +20,7 @@ My approach was the following: if the song provided by the user is within the To
 
 ## Dataset
 
-I scraped "The Hot 100 Chart" by Billboard (https://www.billboard.com/charts/hot-100) for Path A and used an Spotify API (Spotipy) to create a database of songs that I divided into 30 different clusters based on their audio features for Path B. My database includes more than 27.000 songs.
+I scraped "The Hot 100 Chart" by Billboard (https://www.billboard.com/charts/hot-100) for Path A and used an Spotify API (Spotipy) to create a database of songs that I divided into 11 different clusters based on their audio features for Path B. My database includes more than 27.000 songs.
 
 
 ## Organization
@@ -36,7 +36,8 @@ My repository consists of:
         - top100songs.csv (a list of the Hot 100 Billboard chart. Can be updated calling update_top100() from get_top_100.py)
         - song_database.csv (starting database gathered from Spotify playlists. NOT DIVIDED INTO CLUSTERS)
         - clustered_database.csv (song_database.csv but with an added column that identifies the cluster each song belongs to)
-        - scaler.pickle (trained model for clustering)
+        - scaler.pickle (trained scaler)
+        - kmeans.pickle (trained model for clustering)
         
     - Folder: code
         - get_top_100.ipynb (code for scraping and storing data from the Hot 100 Billboard chart. Includes a function that updates the database to have the latest version of the chart)
@@ -44,7 +45,7 @@ My repository consists of:
         - Database.ipynb (code that uses Spotipy API to gather and store songs from several Spotify playlists)
         - Clusters.ipynb (code that takes song_database.csv and divides the songs into clusters by analyzing their audio features)
         - Music_recommendations.ipynb (code that defines the Recommendation() function. It asks for a song name and provides a song recommendation following Path A or B, depending on the input)
-        - Music4You.py (same as Music_recommendations.ipynb but ready to be run. Just call it on Terminal)
+        - MUSIC4YOU.py (same as Music_recommendations.ipynb but ready to be run. Just call it on Terminal)
         
 ## Links
 
