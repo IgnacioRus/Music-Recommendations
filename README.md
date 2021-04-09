@@ -41,10 +41,10 @@ My repository consists of:
     - Folder: code
         - get_top_100.ipynb (code for scraping and storing data from the Hot 100 Billboard chart. Includes a function that updates the database to have the latest version of the chart)
         - get_top_100.py (same as get_top_100.ipynb but ready to be called) 
-        - Creating_database.ipynb (code that uses Spotipy API to gather and store songs from several Spotify playlists)
-        - Creating_Clusters.ipynb (code that takes song_database.csv and divides the songs into clusters by analyzing their audio features)
+        - Database.ipynb (code that uses Spotipy API to gather and store songs from several Spotify playlists)
+        - Clusters.ipynb (code that takes song_database.csv and divides the songs into clusters by analyzing their audio features)
         - Music_recommendations.ipynb (code that defines the Recommendation() function. It asks for a song name and provides a song recommendation following Path A or B, depending on the input)
-        - Music.py (same as Music_recommendations.ipynb but ready to be run. Just call it on Terminal)
+        - Music4You.py (same as Music_recommendations.ipynb but ready to be run. Just call it on Terminal)
         
 ## Links
 
