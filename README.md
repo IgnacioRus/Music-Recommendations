@@ -14,7 +14,7 @@
 
 ## Project Description
 
-I have been hired as Data Analysts by Gnod, a company that owns a website that provides music recommendations, among other things. They hired me to improve their algorithms and set the ground for a collaboration with bigger companies such as Spotify. My first task is to develop a new feature: song recommendations based on your favorite songs.
+I have been (fictionally) hired as Data Analysts by Gnod, a company that owns a website that provides music recommendations, among other things. They hired me to improve their algorithms and set the ground for a collaboration with bigger companies such as Spotify. My first task is to develop a new feature: song recommendations based on your favorite songs.
 
 My approach was the following: if the song provided by the user is within the Top 100 popular songs (https://www.billboard.com/charts/hot-100) then we'll just pick another song from that list (Path A). If the song is not among the most popular songs of the moment, then we'll analyze the audio features of the song and compare with our database. Based on this we'll find which songs are most "similar" to the one provided and pick one of those at random (Path B).
 
@@ -32,6 +32,8 @@ My repository consists of:
 - Folder: Music-Recommendations
     - README.md
     - .gitignore 
+    - Presentation.pdf (slides used to present this project during the Data Analytics bootcamp)
+    - Music4You.mp4 (Recorded presentation of the project)
     - Folder: data
         - top100songs.csv (a list of the Hot 100 Billboard chart. Can be updated calling update_top100() from get_top_100.py)
         - song_database.csv (starting database gathered from Spotify playlists. NOT DIVIDED INTO CLUSTERS)
